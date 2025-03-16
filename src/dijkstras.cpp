@@ -1,6 +1,6 @@
 #include "dijkstras.h"
 
-vector<int> dijkstra_shortest_path(Graph& graph, int source, vector<int>& previous){
+vector<int> dijkstra_shortest_path(const Graph& graph, int source, vector<int>& previous){
     int numVertices = graph.numVertices;
     vector<int> distances(numVertices, INF);
     vector<bool> visited(numVertices, false);
