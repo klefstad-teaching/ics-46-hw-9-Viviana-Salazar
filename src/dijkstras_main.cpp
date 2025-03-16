@@ -1,5 +1,5 @@
-#include "dijkstras.cpp"
-// g++ src/dijkstras.cpp src/main.cpp -o main
+#include "dijkstras.h"
+// g++ src/dijkstras.cpp src/dijkstras_main.cpp -o main
 
 int main()
 {
