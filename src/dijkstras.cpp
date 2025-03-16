@@ -1,11 +1,11 @@
 #include "dijkstras.h"
 
-vector<int> dijkstras::dijkstra_shortest_path(Graph& graph, int source, vector<int>& previous){
-    int numVertices = graph.numVertices();
+vector<int> dijkstra_shortest_path(Graph& graph, int source, vector<int>& previous){
+    int numVertices = graph.numVertices;
     vector<int> distances(numVertices, INF);
     vector<bool> visited(numVertices, false);
     distances[source] = 0;
-    previous[source] = UNDEFINED;
+    previous[source] = -1;
 
     // Declaring a prio queue
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> minHeap;
@@ -20,7 +20,7 @@ vector<int> dijkstras::dijkstra_shortest_path(Graph& graph, int source, vector<i
         visited[u] = true;
 
         for( Edge edge : graph[u]){
-            int v = edge.dest;
+            int v = edge.dst;
             // second or weight?
             int weight = edge.weight;
 
@@ -35,7 +35,7 @@ vector<int> dijkstras::dijkstra_shortest_path(Graph& graph, int source, vector<i
     return distances;
 }
 
-vector<int> dijkstras::extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination){
+vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination){
     vector<int> path;
     std::stack<int> path_stack;
 
