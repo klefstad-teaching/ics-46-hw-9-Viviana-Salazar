@@ -1,7 +1,7 @@
-#include "ladder.cpp"
-// g++ src/ladder.cpp src/main.cpp -o main
+#include "ladder.h"
+// g++ src/ladder.cpp src/ladder_main.cpp -o main
 
 int main()
 {
-    return 0;
+    verify_word_ladder();
 }
